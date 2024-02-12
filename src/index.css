@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Aeonik;
+  src: url('/fonts/AeonikTRIAL-Regular.otf');
+}
+
+*, html, body{
+  font-family: Aeonik;
+  scroll-behavior: smooth;
+}
+
+.head .active{
+  color: #0969C3;
+}
