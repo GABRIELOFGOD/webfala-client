@@ -1,15 +1,13 @@
 import React from 'react'
+import { ContextUser } from '../utils/Context';
 
 const Report = () => {
-
-  const submitForm = () => {
-    
-  }
+  const { setReportLoad, urlPoster, url, setUrl } = ContextUser();
 
   return (
     <div className="flex items-center justify-center flex-col">
       <div className="flex  flex-col items-center justify-center bg-[#f1f0ec] p-4 shadow-base mt-8 rounded-2xl w-2/4">
-        <form onSubmit={submitForm}>
+        <form onSubmit={(e) => urlPoster(e)}>
           <div className="mb-8">
             <h1 className="text-[2rem] text-[#0a0a0a] font-light leading-4">
               Your Review
@@ -29,7 +27,8 @@ const Report = () => {
               className="bg-transparent outline-none border-none w-[100%]"
               type="text"
               placeholder="Fill in the web address here"
-
+              value={url}
+              onChange={e => setUrl(e.target.value)}
             />
           </div>
           <h2 className="text-xl">Information</h2>

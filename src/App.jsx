@@ -6,6 +6,8 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Blog from '../pages/Blog';
 import Report from '../pages/Report';
+import { CreateUserContext } from '../utils/Context';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,10 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <CreateUserContext>
+      <Toaster />
+      <RouterProvider router={router} />
+    </CreateUserContext>
   )
 }
 
